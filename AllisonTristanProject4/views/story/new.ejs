@@ -1,0 +1,48 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <form action = '/stories' method = 'POST'>
+        <table>
+            <tr>
+                <td><label for="cat">Category</label></td>
+                <td><input type="text" id="cat" name="cat" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="title">Title</label></td>
+                <td><input type="text" id="title" name="title" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="loc">Location</label></td>
+                <td><input type="text" id="loc" name="loc" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td class = "align-top"><label for="details">Details:</label></td>
+                <td><textarea rows="5" id="details" name="details" class = "fixed-width" required></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="date">Date</label></td>
+                <td><input type="text" id="date" name="date" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="start">Start Time</label></td>
+                <td><input type="text" id="start" name="start" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="end">End Time</label></td>
+                <td><input type="text" id="end" name="end" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="host">Host Name</label></td>
+                <td><input type="text" id="host" name="host" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td><label for="img">Image URL</label></td>
+                <td><input type="url" id="img" name="img" class = "fixed-width" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class = "align-right"><button>Submit</button></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<%- include('../partials/footer.ejs')%>

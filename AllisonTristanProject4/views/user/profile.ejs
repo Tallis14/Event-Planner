@@ -1,0 +1,14 @@
+
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <h1>Welcome, <%=user.firstName%></h1>
+    <%if(stories.length) {%>
+        <p>You have created the following Events</p>
+        <%stories.forEach(story => {%>
+            <a href = '/stories/<%= story.id%>'><p><%=story.title%></p></a>
+        <%});
+    } else {%>
+        <p>You have not created any Events</p>
+    <%}%>
+    </div>
+    <%- include('../partials/footer.ejs')%>

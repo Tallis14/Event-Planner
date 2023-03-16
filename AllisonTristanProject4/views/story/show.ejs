@@ -1,0 +1,22 @@
+<%- include('../partials/header.ejs')%>
+<p class = "content">
+<h4>Category: <%=story.cat%></h4>
+<h4>Title:<%= story.title%></h4>
+<h4>Location:<%= story.loc%></h4>
+<p>Details:<%= story.details%></p>
+<p>Date:<%= story.date%></p>
+<p>Start Time:<%= story.start%></p>
+<p>End Time<%= story.end%></p>
+<p>Picture: <img src = <%= story.img%>></p>
+<small>Posted <%= story.createdAt%> by <%= story.host%></small>
+
+<div id = "story"><%= story.content%></div>
+<%if(user == story.author._id) {%>
+    <form>
+        <button type = "submit" formmethod = "GET" formaction = "/stories/<%= story.id%>/edit">Edit</button>
+        <button type = "submit" formmethod = "POST" formaction = "/stories/<%= story.id%>?_method=DELETE">Delete</button>
+    </form>
+<%}%>
+
+</div>
+<%- include('../partials/footer.ejs')%>

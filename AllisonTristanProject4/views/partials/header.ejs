@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Border Land 2</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/Style.css">
+    <script src="/javascript/index.js"></script>
+</head>
+
+<body>
+
+<header>
+    <span><a href ='/'><h1>Border Lands</h1></a>
+        <%if(!user) {%>
+            <a href='/users/new'>Sign Up</a>
+            <a href='/users/login'>Login</a>
+        <%} else {%>
+            <a href="/stories/new">Start a new connection</a>
+            <a href='/users/profile'>Profile</a>
+            <a href='/users/logout'>Logout</a>
+        <%}%>
+    </span>
+    <a href="/"><img src="/images/BL2_logo.png"> </a>
+</header>
+
+<div class="topnav">
+    <a href="/stories">Connections</a>
+</div>
+
+
+<% if(errorMessages.length > 0) {%>
+    <% errorMessages.forEach(message=>{%>
+    <div class='error'>
+        <%=message%>
+    </div>
+    <%});%>
+<%}%>
+
+<% if(successMessages.length > 0) {%>
+
+    <% successMessages.forEach(message=>{%>
+    <div class='success'>
+        <%=message%>
+    </div>
+    <%});%>
+<%}%>

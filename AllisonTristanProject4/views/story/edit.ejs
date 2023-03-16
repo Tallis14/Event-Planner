@@ -1,0 +1,48 @@
+<%- include('../partials/header.ejs')%>
+<div class = "content">
+    <form method = "POST" action = "/stories/<%= story.id%>?_method=PUT">
+        <table>
+            <tr>
+                <td><label for="cat">Category</label></td>
+                <td><input type="text" id="cat" name="cat" class = "fixed-width" value="<%= story.cat%>" required ></td>
+            </tr>
+            <tr>
+                <td><label for="title">Title</label></td>
+                <td><input type="text" id="title" name="title" class = "fixed-width" value="<%= story.title%>"  required></td>
+            </tr>
+            <tr>
+                <td><label for="loc">Location</label></td>
+                <td><input type="text" id="loc" name="loc" class = "fixed-width" value ="<%= story.loc%>"  required></td>
+            </tr>
+            <tr>
+                <td class = "details"><label for="details">Content</label></td>
+                <td><textarea rows="5" id="details" name="details" class = "details" required><%= story.details%>"</textarea></td>
+            </tr>
+            <tr>
+                <td><label for="date">Date</label></td>
+                <td><input type="text" id="date" name="date" class = "fixed-width" value = "<%= story.date%>" required></td>
+            </tr>
+            <tr>
+                <td><label for="start">Start Time</label></td>
+                <td><input type="text" id="start" name="start" class = "fixed-width" value = "<%= story.start%>" required></td>
+            </tr>
+            <tr>
+                <td><label for="end">End Time</label></td>
+                <td><input type="text" id="end" name="end" class = "fixed-width" value ="<%= story.end%>" required></td>
+            </tr>
+            <tr>
+                <td><label for="host">Host Name</label></td>
+                <td><input type="text" id="host" name="host" class = "fixed-width" value = "<%= story.host%>" required></td>
+            </tr>
+            <tr>
+                <td><label for="img">Image URL</label></td>
+                <td><input type="url" id="img" name="img" class = "fixed-width" value = "<%= story.img%>" required></td>
+            </tr>
+            <tr>
+                <td colspan="2" class = "align-right"><button>Update</button></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<%- include('../partials/footer.ejs')%>
